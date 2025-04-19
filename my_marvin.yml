@@ -28,7 +28,6 @@ jenkins:
               - Overall/Administer
             entries:
               - user: chocolateen
-              - user: anonymous
 
           - name: ape
             description: "Pedagogical team member"
@@ -58,5 +57,6 @@ jenkins:
               - Job/Workspace
             entries:
               - user: nasso
-jobs:
-  - file: /var/jenkins_home/job_dsl.groovy
+
+  jobs:
+    - file: /var/jenkins_home/job_dsl.groovy

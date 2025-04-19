@@ -20,6 +20,7 @@ job('Tools/SEED') {
         stringParam('DISPLAY_NAME', '', 'Display name for the job')
     }
     steps {
+        shell('cp /var/jenkins_home/job_dsl.groovy .')
         dsl {
             external('job_dsl.groovy')
         }
