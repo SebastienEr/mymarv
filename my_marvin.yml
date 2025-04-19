@@ -57,6 +57,3 @@ jenkins:
               - Job/Workspace
             entries:
               - user: nasso
-
-  jobs:
-    - file: /var/jenkins_home/job_dsl.groovy
