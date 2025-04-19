@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  jenkins:
+    build: .
+    container_name: my_marvin
+    ports:
+      - 8080:8080
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+      - CASC_JENKINS_CONFIG=/var/jenkins_home/inline.yaml
+      - CASC_JENKINS_CONFIG=/var/jenkins_home/my_marvin.yml
+      - USER_CHOCOLATEEN_PASSWORD=supersecret1
+      - USER_VAUGIE_G_PASSWORD=supersecret2
+      - USER_I_DONT_KNOW_PASSWORD=supersecret3
+      - USER_NASSO_PASSWORD=supersecret4
+    volumes:
+      - ./my_marvin.yml:/var/jenkins_home/my_marvin.yml
+      - ./job_dsl.groovy:/var/jenkins_home/job_dsl.groovy
+      - jenkins_home:/var/jenkins_home
+      - ./jenkins_inline.yaml:/var/jenkins_home/inline.yaml
+
+
+volumes:
+  jenkins_home:
